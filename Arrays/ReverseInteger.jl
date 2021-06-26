@@ -3,7 +3,7 @@ function reverseInt(i::Int)::Int
     remainder::Int=0
     while(i>0)
         remainder = i % 10
-        i = trunc(i/10) #trunc(1.7)==1, trunc(2.2)==2
+        i = trunc(i/10) #trunc(1.9)==1, trunc(2.2)==2
         reversed = (reversed * 10) + remainder
     end
     return reversed
@@ -17,5 +17,8 @@ function main()::Nothing
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
+    startTime = time()
     main()
+    endTime = time()
+    print("Completed in $(endTime-startTime)")
 end

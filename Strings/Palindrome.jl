@@ -4,10 +4,13 @@ end
 
 #tests
 if abspath(PROGRAM_FILE) == @__FILE__
+    startTime = time()
    palindromes = ["aa","  ","a","madam","11"] 
    nonPalindromes = ["ab", "a ","car","12"]
    for p in palindromes, n in nonPalindromes
-    @assert isPalindrome(p)
-    @assert !isPalindrome(n)
+    @assert isPalindrome(p) #no crash. tests passed
+    @assert !isPalindrome(n) #no crash. tests passed
    end
+    endTime=time() 
+   print("Completed in $(endTime-startTime)")
 end
